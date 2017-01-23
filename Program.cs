@@ -33,6 +33,9 @@ namespace AlgsDS
             Console.WriteLine(StringMath.addBinary("100", "11"));
             Console.WriteLine(StringMath.addBinary("1010110111001101101000", "1000011011000000111100110"));
 
+           DisplayList(ArrayMath.plusOne(new List<int>(new int[] { 0 })));
+           DisplayList(ArrayMath.plusOne(new List<int>(new int[] { 0, 0, 0, 2, 5, 6, 8, 6, 1, 2, 4, 5 })));
+
             Console.ReadLine();
         }
 
@@ -43,6 +46,17 @@ namespace AlgsDS
                 Console.WriteLine(value);
             }
         }
+
+        public static void DisplayList(List<int> list)
+        {
+            Console.WriteLine("Elements:");
+            foreach (var value in list)
+            {
+                Console.Write(value);
+                Console.Write(' ');
+            }
+        }
+
 
     }
 }

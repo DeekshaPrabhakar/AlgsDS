@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Arrays\ArrayMath.cs" />
     <Compile Include="Arrays\MissingOrRepeatedNumber.cs" />
     <Compile Include="Arrays\SimulationArray.cs" />
     <Compile Include="Program.cs" />
