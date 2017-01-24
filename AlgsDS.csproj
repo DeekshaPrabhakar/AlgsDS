@@ -41,15 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrays\ArrayMath.cs" />
-    <Compile Include="Arrays\MissingOrRepeatedNumber.cs" />
-    <Compile Include="Arrays\SimulationArray.cs" />
+    <Compile Include="Arrays\AddOneToNumber.cs" />
+    <Compile Include="Arrays\AntiDiagonals.cs" />
+    <Compile Include="Arrays\FindDuplicateInArray.cs" />
+    <Compile Include="Arrays\PascalTriangleRows.cs" />
+    <Compile Include="Arrays\SetMatrixZeros.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Strings\PrettyPrint.cs" />
-    <Compile Include="Strings\StringMath.cs" />
-    <Compile Include="Strings\StringSimulation.cs" />
-    <Compile Include="Strings\WordsBucket.cs" />
+    <Compile Include="Strings\AddBinaryStrings.cs" />
+    <Compile Include="Strings\LengthOfLastWord.cs" />
+    <Compile Include="Strings\PalindromeString.cs" />
+    <Compile Include="Strings\PrettyJSON.cs" />
+    <Compile Include="Strings\ReverseTheString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

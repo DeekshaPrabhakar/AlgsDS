@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgsDS.Strings
 {
-    public class StringSimulation
+    public class PalindromeString
     {
         public static int isPalindrome(string A)
         {

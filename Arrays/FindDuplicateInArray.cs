@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgsDS.Arrays
 {
-    public class MissingOrRepeatedNumber
+    public class FindDuplicateInArray
     {
         public static int repeatedNumber(List<int> A)
         {

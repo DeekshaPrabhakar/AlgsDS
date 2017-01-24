@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AlgsDS.Strings
 {
-    public class StringMath
+    public class AddBinaryStrings
     {
         public static string addBinary(string A, string B)
         {
@@ -51,20 +51,21 @@ namespace AlgsDS.Strings
             else
                 return 1;
         }
+
+        /*
+   *  ***** Add Binary Strings *******
+   *  
+
+          Given two binary strings, return their sum (also a binary string).
+
+          Example:
+
+          a = "100"
+
+          b = "11"
+
+          Return a + b = “111”.
+
+   */
     }
-    /*
-     *  ***** Add Binary Strings *******
-     *  
-
-            Given two binary strings, return their sum (also a binary string).
-
-            Example:
-
-            a = "100"
-
-            b = "11"
-
-            Return a + b = “111”.
-
-     */
 }
