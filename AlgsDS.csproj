@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Hashing\WordCount.cs" />
     <Compile Include="LinkedLists\AddTwoNumbersAsLists.cs" />
+    <Compile Include="LinkedLists\LinkedListImplementation.cs" />
     <Compile Include="LinkedLists\MergeTwoSortedLists.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

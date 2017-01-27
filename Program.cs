@@ -112,35 +112,37 @@ namespace AlgsDS
             //Console.WriteLine(PalindromeString.isPalindrome("a").ToString());//1 
             #endregion
 
-            Console.WriteLine("Hash table word count for: To be or not to be, that is the question");
-            DisplayDictionary(WordCount.countWords("To be or not to be, that is the question"));
-            Console.WriteLine("");
+            //Console.WriteLine("Hash table word count for: To be or not to be, that is the question");
+            //DisplayDictionary(WordCount.countWords("To be or not to be, that is the question"));
+            //Console.WriteLine("");
 
-            Console.WriteLine("Fraction for 1/2");
-            Console.WriteLine(Fraction.fractionToDecimal(1, 2));
-            Console.WriteLine("");
+            //Console.WriteLine("Fraction for 1/2");
+            //Console.WriteLine(Fraction.fractionToDecimal(1, 2));
+            //Console.WriteLine("");
 
-            Console.WriteLine("Merge Two Sorted Lists: 5 -> 8 -> 20 and 4 -> 11 -> 15");
-            ListNode A = new ListNode(5);
-            A.next = new ListNode(8);
-            A.next.next = new ListNode(20);
+            //Console.WriteLine("Merge Two Sorted Lists: 5 -> 8 -> 20 and 4 -> 11 -> 15");
+            //ListNode A = new ListNode(5);
+            //A.next = new ListNode(8);
+            //A.next.next = new ListNode(20);
 
-            ListNode B = new ListNode(4);
-            B.next = new ListNode(11);
-            B.next.next = new ListNode(15);
-            DisplayLinkedList(MergeTwoSortedLists.mergeTwoLists(A, B));
-            Console.WriteLine("");
+            //ListNode B = new ListNode(4);
+            //B.next = new ListNode(11);
+            //B.next.next = new ListNode(15);
+            //DisplayLinkedList(MergeTwoSortedLists.mergeTwoLists(A, B));
+            //Console.WriteLine("");
 
-            Console.WriteLine("Add Two Numbers as Lists: (2 -> 4 -> 3) + (5 -> 6 -> 4)");
-            ListNode C = new ListNode(2);
-            C.next = new ListNode(4);
-            C.next.next = new ListNode(3);
+            //Console.WriteLine("Add Two Numbers as Lists: (2 -> 4 -> 3) + (5 -> 6 -> 4)");
+            //ListNode C = new ListNode(2);
+            //C.next = new ListNode(4);
+            //C.next.next = new ListNode(3);
 
-            ListNode D = new ListNode(5);
-            D.next = new ListNode(6);
-            D.next.next = new ListNode(4);
+            //ListNode D = new ListNode(5);
+            //D.next = new ListNode(6);
+            //D.next.next = new ListNode(4);
 
-            DisplayLinkedList(AddTwoNumbersAsLists.addTwoNumbers(C, D));
+            //DisplayLinkedList(AddTwoNumbersAsLists.addTwoNumbers(C, D));
+
+            LinkedListImplementation.test();
             
             Console.ReadLine();
         }
