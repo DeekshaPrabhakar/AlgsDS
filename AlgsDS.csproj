@@ -46,7 +46,9 @@
     <Compile Include="Arrays\FindDuplicateInArray.cs" />
     <Compile Include="Arrays\PascalTriangleRows.cs" />
     <Compile Include="Arrays\SetMatrixZeros.cs" />
+    <Compile Include="Hashing\FindAnagrams.cs" />
     <Compile Include="Hashing\Fraction.cs" />
+    <Compile Include="Hashing\Multimaps.cs" />
     <Compile Include="Hashing\TwoSum.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -54,6 +56,8 @@
     <Compile Include="LinkedLists\AddTwoNumbersAsLists.cs" />
     <Compile Include="LinkedLists\LinkedListImplementation.cs" />
     <Compile Include="LinkedLists\MergeTwoSortedLists.cs" />
+    <Compile Include="LinkedLists\ReverseList.cs" />
+    <Compile Include="LinkedLists\ReverseSublist.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Strings\AddBinaryStrings.cs" />

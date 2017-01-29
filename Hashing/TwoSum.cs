@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,6 +9,8 @@ namespace AlgsDS.Hashing
 {
     public class TwoSum
     {
+
+
         public static List<int> twoSum(List<int> A, int B)
         {
             List<List<int>> outputArray = new List<List<int>>();

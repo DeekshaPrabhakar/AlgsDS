@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -53,7 +54,8 @@ namespace AlgsDS.Hashing
             }
 
             sb.Append(".");
-            Dictionary<long, int> remainderMap =  new Dictionary<long, int>();
+            Hashtable remainderMap = new Hashtable();// took 1.5726 ms
+            //Dictionary<long, int> remainderMap = new Dictionary<long, int>();// took 5.2539 ms
             while (remainder != 0)
             {
                 if (remainderMap.ContainsKey(remainder))

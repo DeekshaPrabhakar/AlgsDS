@@ -3,7 +3,9 @@ using AlgsDS.Hashing;
 using AlgsDS.LinkedLists;
 using AlgsDS.Strings;
 using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +17,78 @@ namespace AlgsDS
         public int val;
         public ListNode next;
         public ListNode(int x) { this.val = x; this.next = null; }
+    }
+
+    public interface LinkedListNode<T>
+    {
+        /* getter/setter for this node's value */
+        T getValue();
+        void setValue(T value);
+
+        /* getter/setter for the subsequent node, or null if this is the last node */
+        LinkedListNode<T> getNext();
+        void setNext(LinkedListNode<T> next);
+
+        /**
+         * Initialize this node and all of its subsequent nodes from
+         * an array of values, starting with the head value at index 0
+         *
+         * @param listValues - the ordered values for the whole list
+         */
+        void setValuesFromArray(T[] listValues);
+    }
+
+    public class LinkedListNodeImpl : LinkedListNode<int>
+    {
+        private int data;
+        private LinkedListNode<int> next;
+
+        public LinkedListNodeImpl()
+        {
+        }
+
+        public LinkedListNodeImpl(int val)
+        {
+            this.data = val;
+            this.next = null;
+        }
+
+        public int getValue()
+        {
+            return this.data;
+        }
+
+        public void setValue(int val)
+        {
+            this.data = val;
+        }
+
+        public LinkedListNode<int> getNext()
+        {
+            return this.next;
+        }
+
+        public void setNext(LinkedListNode<int> next)
+        {
+            this.next = next;
+        }
+
+        public void setValuesFromArray(int[] listValues)
+        {
+            LinkedListNode<int> dummyHead = this;
+            LinkedListNode<int> current = dummyHead;
+
+
+            for (int i = 0; i < listValues.Length; i++)
+            {
+                current.setValue(listValues[i]);
+                if (current.getNext() == null)
+                {
+                    current.setNext(new LinkedListNodeImpl());
+                }
+                current = current.getNext();
+            }
+        }
     }
     class Program
     {
@@ -112,44 +186,102 @@ namespace AlgsDS
             //Console.WriteLine(PalindromeString.isPalindrome("a").ToString());//1 
             #endregion
 
-            //Console.WriteLine("Hash table word count for: To be or not to be, that is the question");
+            #region BeforeSession
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("************************* Before Session Assignment ******************");
+            Console.WriteLine("");
+
+            Console.WriteLine("Hashing: Fraction for 7/9");
+            Console.WriteLine(Fraction.fractionToDecimal(7, 9));
+            Console.WriteLine("");
+
+            Console.WriteLine("Hashing: Hash table word count for: To be or not to be, that is the question");//hashtable took 2.3287ms
+            DisplayHashtable(WordCount.countWords("To be or not to be, that is the question"));
+            Console.WriteLine("");
+
+            //Console.WriteLine("Hash table word count for: To be or not to be, that is the question"); //dictionary took 2.6442ms
             //DisplayDictionary(WordCount.countWords("To be or not to be, that is the question"));
             //Console.WriteLine("");
 
-            //Console.WriteLine("Fraction for 1/2");
-            //Console.WriteLine(Fraction.fractionToDecimal(1, 2));
-            //Console.WriteLine("");
+            Console.WriteLine("Linked Lists: Merge Two Sorted Lists: 5 -> 8 -> 20 and 4 -> 11 -> 15");
+            ListNode A = new ListNode(5);
+            A.next = new ListNode(8);
+            A.next.next = new ListNode(20);
 
-            //Console.WriteLine("Merge Two Sorted Lists: 5 -> 8 -> 20 and 4 -> 11 -> 15");
-            //ListNode A = new ListNode(5);
-            //A.next = new ListNode(8);
-            //A.next.next = new ListNode(20);
+            ListNode B = new ListNode(4);
+            B.next = new ListNode(11);
+            B.next.next = new ListNode(15);
+            DisplayLinkedList(MergeTwoSortedLists.mergeTwoLists(A, B));
+            Console.WriteLine("");
+            Console.WriteLine("");
 
-            //ListNode B = new ListNode(4);
-            //B.next = new ListNode(11);
-            //B.next.next = new ListNode(15);
-            //DisplayLinkedList(MergeTwoSortedLists.mergeTwoLists(A, B));
-            //Console.WriteLine("");
+            Console.WriteLine("Linked Lists: Add Two Numbers as Lists: (2 -> 4 -> 3) + (5 -> 6 -> 4)");
+            ListNode C = new ListNode(2);
+            C.next = new ListNode(4);
+            C.next.next = new ListNode(3);
 
-            //Console.WriteLine("Add Two Numbers as Lists: (2 -> 4 -> 3) + (5 -> 6 -> 4)");
-            //ListNode C = new ListNode(2);
-            //C.next = new ListNode(4);
-            //C.next.next = new ListNode(3);
+            ListNode D = new ListNode(5);
+            D.next = new ListNode(6);
+            D.next.next = new ListNode(4);
 
-            //ListNode D = new ListNode(5);
-            //D.next = new ListNode(6);
-            //D.next.next = new ListNode(4);
-
-            //DisplayLinkedList(AddTwoNumbersAsLists.addTwoNumbers(C, D));
-
-            LinkedListImplementation.test();
+            DisplayLinkedList(AddTwoNumbersAsLists.addTwoNumbers(C, D)); 
+            #endregion
             
+            //Console.WriteLine("");
+            //Console.WriteLine("");
+            //Console.WriteLine("************************* After Session Assignment ******************");            
+            //Console.WriteLine("");
+
+            //Console.WriteLine("Linked Lists: ReverseSublist: 1->2->3 between 2 and 3");
+            //ListNode E = new ListNode(1);
+            //E.next = new ListNode(2);
+            //E.next.next = new ListNode(3);
+            //DisplayLinkedList(ReverseSublist.reverseBetween(E, 2, 3));
+            //Console.WriteLine("");
+
+            //Console.WriteLine("Linked Lists: Implementation test");
+            //LinkedListImplementation.test();
+            //Console.WriteLine("");
+
+            //Console.WriteLine("Hashing: Anagrams index for : cat, dog, god, tca");
+            //List<string> aList = new List<string>(new string[] { "cat", "dog", "god", "tca" });
+            //Display(FindAnagrams.anagrams(aList));
+            //Console.WriteLine("");
+
+            ////Console.WriteLine("Hashing: Anagrams index for : cat, dog, god, tca");
+            ////List<string> bList = new List<string>(new string[] { "abbbaabbbabbbbabababbbbbbbaabaaabbaaababbabbabbaababbbaaabbabaabbaabbabbbbbababbbababbbbaabababba", "abaaabbbabaaabbbbabaabbabaaaababbbbabbbaaaabaababbbbaaaabbbaaaabaabbaaabbaabaaabbabbaaaababbabbaa", "babbabbaaabbbbabaaaabaabaabbbabaabaaabbbbbbabbabababbbabaabaabbaabaabaabbaabbbabaabbbabaaaabbbbab", "bbbabaaabaaaaabaabaaaaaaabbabaaaabbababbabbabbaabbabaaabaabbbabbaabaabaabaaaabbabbabaaababbaababb", "abbbbbbbbbbbbabaabbbbabababaabaabbbababbabbabaaaabaabbabbaaabbaaaabbaabbbbbaaaabaaaaababababaabab", "aabbbbaaabbaabbbbabbbbbaabbababbbbababbbabaabbbbbbababaaaabbbabaabbbbabbbababbbaaabbabaaaabaaaaba", "abbaaababbbabbbbabababbbababbbaaaaabbbbbbaaaabbaaabbbbbbabbabbabbaabbbbaabaabbababbbaabbbaababbaa", "aabaaabaaaaaabbbbaabbabaaaabbaababaaabbabbaaaaababaaabaabbbabbababaabababbaabaababbaabbabbbaaabbb" });
+            ////Display(FindAnagrams.anagrams(bList));
+            ////Console.WriteLine("");
+
+           
+
+            ////Console.WriteLine("Multimapss for: To be or not to be, that is the question");
+            ////DisplayDictionary(WordCount.countWords("To be or not to be, that is the question"));
+            ////Console.WriteLine("");
+
+            ////List<string> aList = new List<string>(new string[] {"cat", "dog", "god", "tca" });
+            ////DisplayListofListofString(FindAnagrams.findAnagrams(aList));
+            
+            
+            ////Console.WriteLine("Reverse List: 5 -> 8 -> 20 -> 30");
+            ////LinkedListNode<int> A = new LinkedListNodeImpl(5);
+            ////A.setNext(new LinkedListNodeImpl(8));
+            ////A.getNext().setNext(new LinkedListNodeImpl(20));
+            ////A.getNext().getNext().setNext(new LinkedListNodeImpl(30));
+            ////DisplayLinkedListNode(A);
+            ////DisplayLinkedListNode(ReverseList.reverseIterative(A));
+
+            ////Stopwatch sw = new Stopwatch();
+            ////sw.Start();
+            ////sw.Stop();
+            ////Console.WriteLine("Elapsed={0}", sw.Elapsed.TotalMilliseconds);
+
             Console.ReadLine();
         }
 
         public static void DisplayLinkedList(ListNode list)
         {
-            Console.WriteLine("Elements:");
             ListNode curr = list;
             while (curr != null)
             {
@@ -165,6 +297,23 @@ namespace AlgsDS
             }
         }
 
+        public static void DisplayLinkedListNode(LinkedListNode<int> list)
+        {
+            LinkedListNode<int> curr = list;
+            while (curr != null)
+            {
+                if (curr.getNext() != null)
+                {
+                    Console.Write(curr.getValue() + "->");
+                }
+                else
+                {
+                    Console.Write(curr.getValue());
+                }
+                curr = curr.getNext();
+            }
+        }
+
         public static void DisplayJSON(List<String> list)
         {
             foreach (var value in list)
@@ -174,6 +323,19 @@ namespace AlgsDS
         }
 
         public static void Display(List<List<int>> list)
+        {
+            foreach (var sublist in list)
+            {
+                foreach (var value in sublist)
+                {
+                    Console.Write(value);
+                    Console.Write(' ');
+                }
+                Console.WriteLine();
+            }
+        }
+
+        public static void DisplayListofListofString(List<List<string>> list)
         {
             foreach (var sublist in list)
             {
@@ -199,6 +361,15 @@ namespace AlgsDS
         public static void DisplayDictionary(Dictionary<string, int> dict)
         {
             foreach (KeyValuePair<string, int> pair in dict)
+            {
+                Console.WriteLine("{0} -> {1}", pair.Key, pair.Value);
+            }
+            Console.WriteLine();
+        }
+
+        public static void DisplayHashtable(Hashtable map)
+        {
+            foreach (DictionaryEntry pair in map)
             {
                 Console.WriteLine("{0} -> {1}", pair.Key, pair.Value);
             }

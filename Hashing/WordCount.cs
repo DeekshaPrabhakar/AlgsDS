@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,9 +10,9 @@ namespace AlgsDS.Hashing
 {
     public class WordCount
     {
-        public static Dictionary<string, int> countWords(String sentence)
+        public static Hashtable countWords(String sentence)
         {
-            Dictionary<string, int> map = new Dictionary<string, int>();
+            Hashtable map = new Hashtable();
             Regex rgx = new Regex("[^a-zA-Z0-9]");
             String[] words = sentence.Split(' ');
 
@@ -24,11 +25,32 @@ namespace AlgsDS.Hashing
                 }
                 else
                 {
-                    map[temp]++;
+                    map[temp] = int.Parse(map[temp].ToString()) + 1;
                 }
             }
             return map;
         }
+
+        //public static Dictionary<string, int> countWords(String sentence)
+        //{
+        //    Dictionary<string, int> map = new Dictionary<string, int>();
+        //    Regex rgx = new Regex("[^a-zA-Z0-9]");
+        //    String[] words = sentence.Split(' ');
+
+        //    for (int i = 0; i < words.Length; i++)
+        //    {
+        //        string temp = rgx.Replace(words[i].ToLower(), "");
+        //        if (!map.ContainsKey(temp))
+        //        {
+        //            map[temp] = 1;
+        //        }
+        //        else
+        //        {
+        //            map[temp]++;
+        //        }
+        //    }
+        //    return map;
+        //}
 
         /*
          * **************  Hash table word count ***************
