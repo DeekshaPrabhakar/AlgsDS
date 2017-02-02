@@ -277,7 +277,7 @@ namespace AlgsDS
             //List<string> aList = new List<string>(new string[] {"cat", "dog", "god", "tca" });
             //DisplayListofListofString(FindAnagrams.findAnagrams(aList));
 
-            Console.WriteLine("Multimapss for: To be or not to be, that is the question");
+            Console.WriteLine("Hashing: Multimapss for 'To be or not to be, that is the question'");
             DisplayDictionaryMultimap(Multimaps.buildMap(WordCount.countWords("To be or not to be, that is the question")));
             Console.WriteLine("");
 
