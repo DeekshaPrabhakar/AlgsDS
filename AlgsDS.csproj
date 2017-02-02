@@ -48,6 +48,7 @@
     <Compile Include="Arrays\SetMatrixZeros.cs" />
     <Compile Include="BinarySearch\CountOccurences.cs" />
     <Compile Include="BinarySearch\RangeSearch.cs" />
+    <Compile Include="BinarySearch\SquareRoot.cs" />
     <Compile Include="Hashing\FindAnagrams.cs" />
     <Compile Include="Hashing\Fraction.cs" />
     <Compile Include="Hashing\LongestSubstring.cs" />

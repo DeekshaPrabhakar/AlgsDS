@@ -398,6 +398,11 @@ namespace AlgsDS
             Console.WriteLine("");
 
 
+            Console.WriteLine("Square Root of Integer");
+            Console.WriteLine(SquareRoot.IntergerSquareroot(11).ToString());
+            Console.WriteLine("");
+            Console.WriteLine("");
+
             #endregion
 
             Console.ReadLine();
