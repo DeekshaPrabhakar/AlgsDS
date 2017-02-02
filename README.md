@@ -43,4 +43,7 @@ Gaining a deeper understanding of algorithms and data structures
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Trees/SymmetricBT.cs">Symmetric Binary Tree</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Trees/ValidBST.cs">Valid Binary Search Tree</a>
   
-
+###<a href="https://github.com/DeekshaPrabhakar/AlgsDS/tree/master/BinarySearch">Binary Search</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BinarySearch/CountOccurences.cs">Count Element Occurence</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BinarySearch/RangeSearch.cs">Search for a Range</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BinarySearch/SquareRoot.cs">Square Root of Integer</a>
