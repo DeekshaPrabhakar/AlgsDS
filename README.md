@@ -32,5 +32,15 @@ Gaining a deeper understanding of algorithms and data structures
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Hashing/WordCount.cs">Hash table word count</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Hashing/FindAnagrams.cs">Anagrams</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Hashing/Multimaps.cs">Multimaps</a>
-  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Hashing/TwoSum.cs">Two Sum</a><b> (stuck)</b>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Hashing/TwoSum.cs">Two Sum</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Hashing/WindowString.cs">Window String</a><b> (stuck)</b>
+  
+  
+#Week 3
+
+###<a href="https://github.com/DeekshaPrabhakar/AlgsDS/tree/master/Trees">Trees</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Trees/Inorder.cs">Inorder Traversal</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Trees/SymmetricBT.cs">Symmetric Binary Tree</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Trees/ValidBST.cs">Valid Binary Search Tree</a>
+  
+
