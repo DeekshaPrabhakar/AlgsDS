@@ -46,6 +46,8 @@
     <Compile Include="Arrays\FindDuplicateInArray.cs" />
     <Compile Include="Arrays\PascalTriangleRows.cs" />
     <Compile Include="Arrays\SetMatrixZeros.cs" />
+    <Compile Include="BinarySearch\CountOccurences.cs" />
+    <Compile Include="BinarySearch\RangeSearch.cs" />
     <Compile Include="Hashing\FindAnagrams.cs" />
     <Compile Include="Hashing\Fraction.cs" />
     <Compile Include="Hashing\LongestSubstring.cs" />
