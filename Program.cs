@@ -2,6 +2,7 @@
 using AlgsDS.Hashing;
 using AlgsDS.LinkedLists;
 using AlgsDS.Strings;
+using AlgsDS.Trees;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -89,6 +90,14 @@ namespace AlgsDS
                 current = current.getNext();
             }
         }
+    }
+
+    public class TreeNode
+    {
+        public int val;
+        public TreeNode left;
+        public TreeNode right;
+        public TreeNode(int x) { this.val = x; this.left = this.right = null; }
     }
     class Program
     {
@@ -186,7 +195,7 @@ namespace AlgsDS
             //Console.WriteLine(PalindromeString.isPalindrome("a").ToString());//1 
             #endregion
 
-            #region BeforeSession
+            #region WeekTwoBeforeSession
             Console.WriteLine("");
             Console.WriteLine("");
             Console.WriteLine("************************* Before Session Assignment ******************");
@@ -227,55 +236,121 @@ namespace AlgsDS
 
             DisplayLinkedList(AddTwoNumbersAsLists.addTwoNumbers(C, D)); 
             #endregion
-            
-            //Console.WriteLine("");
-            //Console.WriteLine("");
-            //Console.WriteLine("************************* After Session Assignment ******************");            
-            //Console.WriteLine("");
 
-            //Console.WriteLine("Linked Lists: ReverseSublist: 1->2->3 between 2 and 3");
-            //ListNode E = new ListNode(1);
-            //E.next = new ListNode(2);
-            //E.next.next = new ListNode(3);
-            //DisplayLinkedList(ReverseSublist.reverseBetween(E, 2, 3));
-            //Console.WriteLine("");
+            #region WeekTwoAfterSession
+            Console.WriteLine("");
+            Console.WriteLine("");
+            Console.WriteLine("************************* After Session Assignment ******************");
+            Console.WriteLine("");
 
-            //Console.WriteLine("Linked Lists: Implementation test");
-            //LinkedListImplementation.test();
-            //Console.WriteLine("");
+            Console.WriteLine("Linked Lists: ReverseSublist: 1->2->3 between 2 and 3");
+            ListNode E = new ListNode(1);
+            E.next = new ListNode(2);
+            E.next.next = new ListNode(3);
+            DisplayLinkedList(ReverseSublist.reverseBetween(E, 2, 3));
+
+
+            //Console.WriteLine("Reverse List: 5 -> 8 -> 20 -> 30");
+            //LinkedListNode<int> A = new LinkedListNodeImpl(5);
+            //A.setNext(new LinkedListNodeImpl(8));
+            //A.getNext().setNext(new LinkedListNodeImpl(20));
+            //A.getNext().getNext().setNext(new LinkedListNodeImpl(30));
+            //DisplayLinkedListNode(A);
+            //DisplayLinkedListNode(ReverseList.reverseIterative(A));
+            Console.WriteLine("");
+
+            Console.WriteLine("");
+            Console.WriteLine("Linked Lists: Implementation test");
+            LinkedListImplementation.test();
+            Console.WriteLine("");
+
+            Console.WriteLine("Hashing: Anagrams index for : cat, dog, god, tca");
+            List<string> aList = new List<string>(new string[] { "cat", "dog", "god", "tca" });
+            Display(FindAnagrams.anagrams(aList));
+            Console.WriteLine("");
 
             //Console.WriteLine("Hashing: Anagrams index for : cat, dog, god, tca");
-            //List<string> aList = new List<string>(new string[] { "cat", "dog", "god", "tca" });
-            //Display(FindAnagrams.anagrams(aList));
+            //List<string> bList = new List<string>(new string[] { "abbbaabbbabbbbabababbbbbbbaabaaabbaaababbabbabbaababbbaaabbabaabbaabbabbbbbababbbababbbbaabababba", "abaaabbbabaaabbbbabaabbabaaaababbbbabbbaaaabaababbbbaaaabbbaaaabaabbaaabbaabaaabbabbaaaababbabbaa", "babbabbaaabbbbabaaaabaabaabbbabaabaaabbbbbbabbabababbbabaabaabbaabaabaabbaabbbabaabbbabaaaabbbbab", "bbbabaaabaaaaabaabaaaaaaabbabaaaabbababbabbabbaabbabaaabaabbbabbaabaabaabaaaabbabbabaaababbaababb", "abbbbbbbbbbbbabaabbbbabababaabaabbbababbabbabaaaabaabbabbaaabbaaaabbaabbbbbaaaabaaaaababababaabab", "aabbbbaaabbaabbbbabbbbbaabbababbbbababbbabaabbbbbbababaaaabbbabaabbbbabbbababbbaaabbabaaaabaaaaba", "abbaaababbbabbbbabababbbababbbaaaaabbbbbbaaaabbaaabbbbbbabbabbabbaabbbbaabaabbababbbaabbbaababbaa", "aabaaabaaaaaabbbbaabbabaaaabbaababaaabbabbaaaaababaaabaabbbabbababaabababbaabaababbaabbabbbaaabbb" });
+            //Display(FindAnagrams.anagrams(bList));
             //Console.WriteLine("");
 
-            ////Console.WriteLine("Hashing: Anagrams index for : cat, dog, god, tca");
-            ////List<string> bList = new List<string>(new string[] { "abbbaabbbabbbbabababbbbbbbaabaaabbaaababbabbabbaababbbaaabbabaabbaabbabbbbbababbbababbbbaabababba", "abaaabbbabaaabbbbabaabbabaaaababbbbabbbaaaabaababbbbaaaabbbaaaabaabbaaabbaabaaabbabbaaaababbabbaa", "babbabbaaabbbbabaaaabaabaabbbabaabaaabbbbbbabbabababbbabaabaabbaabaabaabbaabbbabaabbbabaaaabbbbab", "bbbabaaabaaaaabaabaaaaaaabbabaaaabbababbabbabbaabbabaaabaabbbabbaabaabaabaaaabbabbabaaababbaababb", "abbbbbbbbbbbbabaabbbbabababaabaabbbababbabbabaaaabaabbabbaaabbaaaabbaabbbbbaaaabaaaaababababaabab", "aabbbbaaabbaabbbbabbbbbaabbababbbbababbbabaabbbbbbababaaaabbbabaabbbbabbbababbbaaabbabaaaabaaaaba", "abbaaababbbabbbbabababbbababbbaaaaabbbbbbaaaabbaaabbbbbbabbabbabbaabbbbaabaabbababbbaabbbaababbaa", "aabaaabaaaaaabbbbaabbabaaaabbaababaaabbabbaaaaababaaabaabbbabbababaabababbaabaababbaabbabbbaaabbb" });
-            ////Display(FindAnagrams.anagrams(bList));
-            ////Console.WriteLine("");
+            //List<string> aList = new List<string>(new string[] {"cat", "dog", "god", "tca" });
+            //DisplayListofListofString(FindAnagrams.findAnagrams(aList));
 
-           
+            Console.WriteLine("Multimapss for: To be or not to be, that is the question");
+            DisplayDictionaryMultimap(Multimaps.buildMap(WordCount.countWords("To be or not to be, that is the question")));
+            Console.WriteLine("");
 
-            ////Console.WriteLine("Multimapss for: To be or not to be, that is the question");
-            ////DisplayDictionary(WordCount.countWords("To be or not to be, that is the question"));
-            ////Console.WriteLine("");
+            //Console.WriteLine(LongestSubstring.lengthOfLongestSubstring("Wnb9z9dMc7E8v1RTUaZPoDNIAXRlzkqLaa97KMWLzbitaCkRpiE4J4hJWhRcGnC8H6mwasgDfZ76VKdXhvEYmYrZY4Cfmf4HoSlchYWFEb1xllGKyEEmZOLPh1V6RuM7Mxd7xK72aNrWS4MEaUmgEn7L4rW3o14Nq9l2EN4HH6uJWljI8a5irvuODHY7A7ku4PJY2anSWnfJJE1w8p12Ks3oZRxAF3atqGBlzVQ0gltOwYmeynttUmQ4QBDLDrS4zn4VRZLosOITo4JlIqPD6t4NjhHThOjJxpMp9fICkrgJeGiDAwsb8a3I7Txz5BBKV9bEfMsKNhCuY3W0ZHqY0MhBfz1CbYCzwZZdM4p65ppP9s5QJcfjadmMMi26JKz0TVVwvNA8LP5Vi1QsxId4SI19jfcUH97wmZu0pbw1zFtyJ8GAp5yjjQTzFIboC1iRzklnOJzJld9TMaxqvBNBJKIyDjWrdfLOY8FGMOcPhfJ97Dph35zfxYyUf4DIqFi94lm9J0skYqGz9JT0kiAABQZDazZcNi80dSSdveSl6h3dJjHmlK8qHIlDsqFd5FMhlEirax8WA0v3NDPT8vPhwKpxcnVeu14Gcxr3h1wAXXV0y7Xy9qqB2NQ5HQLJ7cyXAckEYHsLCPSy28xcdNJatx1KLWohOQado4WywJbGvsFR17rKmvOPABweXnFD3odrbSMD4Na4nuBBswvMmFRTUOcf7jZi4z5JnJqXz6hitaPnaEtjoSEBq82a52nvqYy7hhldBoxen2et2OMadVEHeTYLL7GLsIhTP6UizHIuzcJMljo4lFgW5AyrfUlIBPAlhwaSiJtTvcbVZynDSM6RO1PqFKWKg2MHIgNhjuzENg2oFCfW7z5KJvEL9qWqKzZNc0o3BMRjS04NCHFvhtsteQoQRgz84XZBHBJRdekCdcVVXu9c01gYRAz7oIAxN3zKZb64EFKssfQ4HW971jv3H7x5E9dAszA0HrKTONyZDGYtHWt4QLhNsIs8mo4AIN7ecFKewyvGECAnaJpDn1MTTS4yTgZnm6N6qnmfjVt6ZU51F9BxH0jVG0kovTGSjTUkmb1mRTLQE5mTlVHcEz3yBOh4WiFFJjKJdi1HBIBaDL4r45HzaBvmYJPlWIomkqKEmQ4rLAbYG7C5rFfpMu8rHvjU7hP0JVvteGtaGn7mqeKsn7CgrJX1tb8t0ldaS3iUy8SEKAo5IZHNKOfEaij3nI4oRVzeVOZsH91pMsA4jRYgEohubPW8ciXwVrFi1qEWjvB8gfalyP60n1fHyjsiLW0T5uY1JzQWHKCbLVh7QFoJFAEV0L516XmzIo556yRH1vhPnceOCjebqgsmO78AQ8Ir2d4pHFFHAGB9lESn3OtJye1Lcyq9D6X93UakA3JKVKEt6JZDLVBMp4msOefkPKSw59Uix9d9kOQm8WCepJTangdNSOKaxblZDNJ5eHvEroYacBhd9UdafEitdF3nfStF7AhkSfQVC61YWWkKTNdx96OoJGTnxuqt4oFZNFtO7aMuN3IJAkw3m3kgZFRGyd3D3wweagNL9XlYtvZwejbjpkDOZz33C0jbEWaMEaUPw6BG49XqyQoUwtriguO0yvWyaJqD4ye3o0E46huKYAsdKAq6MLWMxF6tfyPVaoqOGd0eOBHbAF89XXmDd4AIkoFPXkAOW8hln5nXnIWP6RBbfEkPPbxoToMbV").ToString());
 
-            ////List<string> aList = new List<string>(new string[] {"cat", "dog", "god", "tca" });
-            ////DisplayListofListofString(FindAnagrams.findAnagrams(aList));
-            
-            
-            ////Console.WriteLine("Reverse List: 5 -> 8 -> 20 -> 30");
-            ////LinkedListNode<int> A = new LinkedListNodeImpl(5);
-            ////A.setNext(new LinkedListNodeImpl(8));
-            ////A.getNext().setNext(new LinkedListNodeImpl(20));
-            ////A.getNext().getNext().setNext(new LinkedListNodeImpl(30));
-            ////DisplayLinkedListNode(A);
-            ////DisplayLinkedListNode(ReverseList.reverseIterative(A));
+            //Console.WriteLine(WindowString.minWindow("ADOBECODEBANC", "ABC"));
+            //Console.WriteLine(WindowString.minWindow("AAAAAA", "AA"));
+            //Console.WriteLine(WindowString.minWindow("0mJdGXwLm9AOZ5xA8u92KDYqGJroQ537hoRXjQoUCMOpDYwxoNjexJGWQJAIxSFF3ZbIe27oFxUTJxtv8mORwpuRZn30MDj3kXRW2Ix3lslj7kwmGZPXAKhBW4q5T2BzsqbL0ZETFqRdxVm8GCGfqshvpWzsRvprUcF9vw3VlftqTRzKRzr4zYB2P6C7lg3I7EhGMPukUj8XGGZTXqPqnCqes", "rsm2ty04PYPEOPYO5")); 
+            #endregion
 
-            ////Stopwatch sw = new Stopwatch();
-            ////sw.Start();
-            ////sw.Stop();
-            ////Console.WriteLine("Elapsed={0}", sw.Elapsed.TotalMilliseconds);
+            #region WeekThreeBeforeSession
+            //TreeNode notValidBST = new TreeNode(1);
+            //notValidBST.left = new TreeNode(2);
+            //notValidBST.right = new TreeNode(3);
+            //Console.WriteLine(ValidBST.isValidBST(notValidBST));
+
+            //TreeNode validBST = new TreeNode(2);
+            //validBST.left = new TreeNode(1);
+            //validBST.right = new TreeNode(3);
+            //Console.WriteLine(ValidBST.isValidBST(validBST));
+
+            //TreeNode notValidBST = new TreeNode(3);//11 3 2 4 1 3 -1 -1 -1 -1 -1 -1 
+            //notValidBST.left = new TreeNode(2);
+            //notValidBST.left.left = new TreeNode(1);
+            //notValidBST.left.left.left = new TreeNode(-1);
+            //notValidBST.left.left.right = new TreeNode(-1);
+            //notValidBST.left.right = new TreeNode(3);
+            //notValidBST.right = new TreeNode(4);
+            //notValidBST.right.left = new TreeNode(-1);
+            //notValidBST.right.right = new TreeNode(-1);
+            //Console.WriteLine(ValidBST.isValidBST(notValidBST));
+
+            //TreeNode inOrder = new TreeNode(1);
+            //inOrder.right = new TreeNode(2);
+            //inOrder.right.left = new TreeNode(3);
+            //DisplayList(Inorder.inOrderTraversal(inOrder));
+
+            //TreeNode inOrder = new TreeNode(314);
+            //inOrder.left = new TreeNode(6);
+            //inOrder.left.left = new TreeNode(271);
+            //inOrder.left.right = new TreeNode(561);
+            //inOrder.left.left.left = new TreeNode(28);
+            //inOrder.left.left.right = new TreeNode(0);
+
+            //inOrder.left.right.right = new TreeNode(3);
+            //inOrder.left.right.right.left = new TreeNode(17);
+
+            //inOrder.right = new TreeNode(6);
+            //inOrder.right.left = new TreeNode(2);
+            //inOrder.right.right = new TreeNode(271);
+            //DisplayList(Inorder.inorderTraversal(inOrder));
+
+
+            //TreeNode symmetric = new TreeNode(1);
+            //symmetric.left = new TreeNode(2);
+            //symmetric.left.left = new TreeNode(3);
+            //symmetric.left.right = new TreeNode(4);
+
+
+            //symmetric.right = new TreeNode(2);
+            //symmetric.right.left = new TreeNode(4);
+            //symmetric.right.right = new TreeNode(3);
+            //Console.WriteLine(SymmetricBT.isSymmetric(symmetric).ToString());
+
+            //TreeNode notSymmetric = new TreeNode(1);
+            //notSymmetric.left = new TreeNode(2);
+            //notSymmetric.left.right = new TreeNode(3);
+
+
+            //notSymmetric.right = new TreeNode(2);
+            //notSymmetric.right.right = new TreeNode(3);
+            //Console.WriteLine(SymmetricBT.isSymmetric(notSymmetric).ToString()); 
+            #endregion
 
             Console.ReadLine();
         }
@@ -365,6 +440,33 @@ namespace AlgsDS
                 Console.WriteLine("{0} -> {1}", pair.Key, pair.Value);
             }
             Console.WriteLine();
+        }
+
+        public static void DisplayDictionaryMultimap(Dictionary<int, List<String>> dict)
+        {
+            foreach (KeyValuePair<int, List<String>> pair in dict)
+            {
+                Console.WriteLine("{0} -> {1}", pair.Key, getListStrings(pair.Value));
+            }
+            Console.WriteLine();
+        }
+
+        protected static string getListStrings(List<String> list)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.Append("[");
+
+            foreach(String str in list)
+            {
+                sb.Append("'" + str + "', ");
+            }
+            if (sb.ToString().Length > 3)
+            {
+                sb.Remove(sb.ToString().Length - 2, 2);
+            }
+            sb.Append("]");
+
+            return sb.ToString();
         }
 
         public static void DisplayHashtable(Hashtable map)

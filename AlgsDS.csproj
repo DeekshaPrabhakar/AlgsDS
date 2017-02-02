@@ -48,10 +48,12 @@
     <Compile Include="Arrays\SetMatrixZeros.cs" />
     <Compile Include="Hashing\FindAnagrams.cs" />
     <Compile Include="Hashing\Fraction.cs" />
+    <Compile Include="Hashing\LongestSubstring.cs" />
     <Compile Include="Hashing\Multimaps.cs" />
     <Compile Include="Hashing\TwoSum.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Hashing\WindowString.cs" />
     <Compile Include="Hashing\WordCount.cs" />
     <Compile Include="LinkedLists\AddTwoNumbersAsLists.cs" />
     <Compile Include="LinkedLists\LinkedListImplementation.cs" />
@@ -65,6 +67,9 @@
     <Compile Include="Strings\PalindromeString.cs" />
     <Compile Include="Strings\PrettyJSON.cs" />
     <Compile Include="Strings\ReverseTheString.cs" />
+    <Compile Include="Trees\Inorder.cs" />
+    <Compile Include="Trees\SymmetricBT.cs" />
+    <Compile Include="Trees\ValidBST.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -9,60 +9,64 @@ namespace AlgsDS.Hashing
 {
     public class TwoSum
     {
-
-
-        public static List<int> twoSum(List<int> A, int B)
+        public class Node : IEquatable<Node>
         {
-            List<List<int>> outputArray = new List<List<int>>();
-            Dictionary<int, int> map = new Dictionary<int, int>();//key number and index is value
-            for (int i = 0; i < A.Count; i++)
+            public int index1;
+            public int index2;
+
+            public Node(int ind1, int ind2)
             {
-                if (!map.ContainsKey(A[i])) //failing for [1,1,1] target 2.. need to fix the hash
-                {
-                    map[A[i]] = i;
-                }
+                this.index1 = ind1;
+                this.index2 = ind2;
             }
 
-            int index1 = -1;
-            int index2 = -1;
-
-            for (int i = 0; i < A.Count; i++)
+            public bool Equals(Node other)
             {
-                int complement = B - A[i];
+                if (this.index2 < other.index2)
+                    return false;
+                if (this.index2 > other.index2)
+                    return true;
 
-                if (map.ContainsKey(complement) && map[complement] != i && i + 1 < map[complement] + 1)//index1 < index2
-                {
-                    if (index1 == -1)//not set
-                    {
-                        index1 = i + 1;
-                        index2 = map[complement] + 1;
-                    }
-                    else
-                    {
-                        if (map[complement] + 1 < index2)
-                        {
-                            index1 = i + 1;
-                            index2 = map[complement] + 1;
-                        }
-                        else if (map[complement] + 1 == index2 && i + 1 < index1)
-                        {
-                            index1 = i + 1;
-                            index2 = map[complement] + 1;
-                        }
-                    }
-                    outputArray.Add(new List<int>(new int[] { i + 1, map[complement] + 1 }));//not zero based
-
-                }
-            }
-
-            if (index1 == -1 && index2 == -1)
-            {
-                return new List<int>();
-            }
-            else
-            {
-                return new List<int>(new int[] { index1, index2 });
+                return int.Equals(this.index1, other.index1);
             }
         }
+
+        public static List<int> twoSumOne(List<int> A, int B)
+        {//LOST COMPLETELY
+            Dictionary<int, int> hashMap = new Dictionary<int, int>();
+            List<int> resultList = new List<int>();
+            List<Node> node = new List<Node>();
+
+            int sum = B;
+            int diff;
+            int size = A.Count;
+            int num;
+            int index;
+           
+            for (int i = size - 1; i >= 0; i--)
+            {
+                num = A[i];
+                diff = sum - num;
+
+                if (hashMap.ContainsKey(diff))
+                {
+                    index = hashMap[diff];
+                    node.Add(new Node(i + 1, index + 1));
+                }
+                if (!hashMap.ContainsKey(num))
+                {
+                    hashMap.Add(num, i);
+                }
+            }
+
+            if (node.Count > 0)
+            {
+                node.Sort();
+                resultList.Add(node[0].index1);
+                resultList.Add(node[0].index2);
+            }
+
+            return resultList;
+        }       
     }
 }

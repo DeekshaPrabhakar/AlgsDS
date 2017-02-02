@@ -9,10 +9,22 @@ namespace AlgsDS.Hashing
 {
     public class Multimaps
     {
-        //public static Dictionary<int, List<String>> buildMap(Hashtable<String, int> map)
-        //{
+        public static Dictionary<int, List<String>> buildMap(Hashtable map)
+        {
+            Dictionary<int, List<String>> resultMap =  new Dictionary<int,List<string>>();
 
-        //}
+            foreach(DictionaryEntry pair in map)
+            {
+                int wordCount = int.Parse(pair.Value.ToString());
+                if (!resultMap.ContainsKey(wordCount))
+                {
+                    resultMap.Add(wordCount, new List<string>());
+                }
+                resultMap[wordCount].Add(pair.Key.ToString());
+            }
+
+            return resultMap;
+        }
 
     }
 
