@@ -8,7 +8,15 @@ namespace AlgsDS.LinkedLists
 {
     public class ReverseSublist
     {
-        public static ListNode reverseBetween(ListNode A, int B, int C)
+        public static void Run()
+        {
+            Console.WriteLine("Linked Lists: ReverseSublist: 1->2->3 between 2 and 3");
+            ListNode E = new ListNode(1);
+            E.next = new ListNode(2);
+            E.next.next = new ListNode(3);
+            AlgsDSHelper.DisplayLinkedList(reverseBetween(E, 2, 3));
+        }
+        private static ListNode reverseBetween(ListNode A, int B, int C)
         {
             if(B == C)
             {

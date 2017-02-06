@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AlgsDSHelper.cs" />
     <Compile Include="Arrays\AddOneToNumber.cs" />
     <Compile Include="Arrays\AntiDiagonals.cs" />
     <Compile Include="Arrays\FindDuplicateInArray.cs" />
@@ -53,14 +54,25 @@
     <Compile Include="Hashing\Fraction.cs" />
     <Compile Include="Hashing\LongestSubstring.cs" />
     <Compile Include="Hashing\Multimaps.cs" />
+    <Compile Include="Hashing\PhoneBook.cs" />
+    <Compile Include="Hashing\RansomNote.cs" />
     <Compile Include="Hashing\TwoSum.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Hashing\WindowString.cs" />
     <Compile Include="Hashing\WordCount.cs" />
     <Compile Include="LinkedLists\AddTwoNumbersAsLists.cs" />
+    <Compile Include="LinkedLists\DetectCycle.cs" />
+    <Compile Include="LinkedLists\GetNode.cs" />
+    <Compile Include="LinkedLists\InsertNode.cs" />
+    <Compile Include="LinkedLists\InsertNodeSortedDoublyLL.cs" />
     <Compile Include="LinkedLists\LinkedListImplementation.cs" />
+    <Compile Include="LinkedLists\MergePoint.cs" />
     <Compile Include="LinkedLists\MergeTwoSortedLists.cs" />
+    <Compile Include="LinkedLists\Palindrome.cs" />
+    <Compile Include="LinkedLists\RemoveDuplicates.cs" />
+    <Compile Include="LinkedLists\RemoveDuplicatesII.cs" />
+    <Compile Include="LinkedLists\ReverseDoublyLinkedList.cs" />
     <Compile Include="LinkedLists\ReverseList.cs" />
     <Compile Include="LinkedLists\ReverseSublist.cs" />
     <Compile Include="Program.cs" />
@@ -73,6 +85,7 @@
     <Compile Include="Trees\Inorder.cs" />
     <Compile Include="Trees\SymmetricBT.cs" />
     <Compile Include="Trees\ValidBST.cs" />
+    <Compile Include="WeekTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

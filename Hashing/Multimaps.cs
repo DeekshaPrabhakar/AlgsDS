@@ -9,7 +9,13 @@ namespace AlgsDS.Hashing
 {
     public class Multimaps
     {
-        public static Dictionary<int, List<String>> buildMap(Hashtable map)
+        public static void Run()
+        {
+            Console.WriteLine("Hashing: Multimapss for 'To be or not to be, that is the question'");
+            AlgsDSHelper.DisplayDictionaryMultimap(buildMap(WordCount.countWords("To be or not to be, that is the question")));
+            Console.WriteLine("");
+        }
+        private static Dictionary<int, List<String>> buildMap(Hashtable map)
         {
             Dictionary<int, List<String>> resultMap =  new Dictionary<int,List<string>>();
 

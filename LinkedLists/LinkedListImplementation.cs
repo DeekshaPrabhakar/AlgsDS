@@ -8,7 +8,14 @@ namespace AlgsDS.LinkedLists
 {    
     public class LinkedListImplementation
     {
-        public static void test()
+        public static void Run()
+        {
+            Console.WriteLine("");
+            Console.WriteLine("Linked Lists: Implementation test");
+            test();
+            Console.WriteLine("");
+        }
+        private static void test()
         {
             LinkedListNode<int> head = null;
             int[] listValues = new int[] { 1, 2, 3 };

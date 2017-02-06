@@ -8,7 +8,13 @@ namespace AlgsDS.Strings
 {
     public class ReverseTheString
     {
-        public static String reverseWords(String a)
+        public static void Run()
+        {
+            Console.WriteLine("ReverseTheString:    fwbpudnbrozzifml osdt  ulc jsx kxorifrhubk ouhsuhf  sswz qfho dqmy  sn myq igjgip iwfcqq");
+            Console.WriteLine(reverseWords("   fwbpudnbrozzifml osdt  ulc jsx kxorifrhubk ouhsuhf  sswz qfho dqmy  sn myq igjgip iwfcqq"));
+            Console.WriteLine();
+        }
+        private static String reverseWords(String a)
         {
             String[] words = a.Split(' ');
             StringBuilder sb = new StringBuilder();

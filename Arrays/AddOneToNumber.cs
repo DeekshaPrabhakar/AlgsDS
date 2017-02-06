@@ -8,7 +8,15 @@ namespace AlgsDS.Arrays
 {
     public class AddOneToNumber
     {
-        public static List<int> plusOne(List<int> A)
+        public static void Run()
+        {
+            Console.WriteLine("AddOneToNumber: [0]");
+            AlgsDSHelper.DisplayList(plusOne(new List<int>(new int[] { 0 })));
+            Console.WriteLine("AddOneToNumber: [0, 0, 0, 2, 5, 6, 8, 6, 1, 2, 4, 5]");
+            AlgsDSHelper.DisplayList(plusOne(new List<int>(new int[] { 0, 0, 0, 2, 5, 6, 8, 6, 1, 2, 4, 5 })));
+            Console.WriteLine();
+        }
+        private static List<int> plusOne(List<int> A)
         {
             List<int> outputArray = new List<int>();
             int carry = 1;

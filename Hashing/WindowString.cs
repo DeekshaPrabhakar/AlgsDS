@@ -9,7 +9,13 @@ namespace AlgsDS.Hashing
 {
     public class WindowString
     {
-        public static string minWindow(string A, string B)
+        public static void Run()
+        {
+            Console.WriteLine(minWindow("ADOBECODEBANC", "ABC"));
+            Console.WriteLine(minWindow("AAAAAA", "AA"));
+            Console.WriteLine(minWindow("0mJdGXwLm9AOZ5xA8u92KDYqGJroQ537hoRXjQoUCMOpDYwxoNjexJGWQJAIxSFF3ZbIe27oFxUTJxtv8mORwpuRZn30MDj3kXRW2Ix3lslj7kwmGZPXAKhBW4q5T2BzsqbL0ZETFqRdxVm8GCGfqshvpWzsRvprUcF9vw3VlftqTRzKRzr4zYB2P6C7lg3I7EhGMPukUj8XGGZTXqPqnCqes", "rsm2ty04PYPEOPYO5")); 
+        }
+        private static string minWindow(string A, string B)
         {
             char[] SCharacterArray = A.ToCharArray();
             char[] TCharacterArray = B.ToCharArray();
@@ -34,9 +40,7 @@ namespace AlgsDS.Hashing
             StringBuilder sb = new StringBuilder();
             int size = TCharacterArray.Length;
             bool subStringStarted = false;
-            int start = 0;
-            int end = 0;
-
+            
             for(int i=0; i<SCharacterArray.Length; i++)
             {
                 if (!subStringStarted && targetMap.ContainsKey(SCharacterArray[i].ToString()))

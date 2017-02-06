@@ -8,7 +8,14 @@ namespace AlgsDS.Arrays
 {
     public class PascalTriangleRows
     {
-        public static List<List<int>> generate(int A)
+        public static void Run()
+        {
+            Console.WriteLine("PascalTriangleRows: for 5 rows");
+            AlgsDSHelper.Display(generate(5));
+            Console.WriteLine();
+        }
+
+        private static List<List<int>> generate(int A)
         {
             List<List<int>> pascalTriangle = new List<List<int>>();
             List<int> row = new List<int>();

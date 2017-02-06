@@ -8,7 +8,21 @@ namespace AlgsDS.LinkedLists
 {
     public class MergeTwoSortedLists
     {
-        public static ListNode mergeTwoLists(ListNode A, ListNode B)
+        public static void Run()
+        {
+            Console.WriteLine("Linked Lists: Merge Two Sorted Lists: 5 -> 8 -> 20 and 4 -> 11 -> 15");
+            ListNode A = new ListNode(5);
+            A.next = new ListNode(8);
+            A.next.next = new ListNode(20);
+
+            ListNode B = new ListNode(4);
+            B.next = new ListNode(11);
+            B.next.next = new ListNode(15);
+            AlgsDSHelper.DisplayLinkedList(mergeTwoLists(A, B));
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+        private static ListNode mergeTwoLists(ListNode A, ListNode B)
         {
             ListNode dummyHead = new ListNode(0);
             ListNode current = dummyHead;

@@ -8,7 +8,13 @@ namespace AlgsDS.Arrays
 {
     public class FindDuplicateInArray
     {
-        public static int repeatedNumber(List<int> A)
+        public static void Run()
+        {
+            Console.WriteLine("FindDuplicateInArray: [3,4,1,4,1]");
+            Console.WriteLine(repeatedNumber(new List<int>(new int[] { 3, 4, 1, 4, 1 })));
+            Console.WriteLine();
+        }
+        private static int repeatedNumber(List<int> A)
         {
             A.Sort();
             int firstNumber = -1;

@@ -8,7 +8,14 @@ namespace AlgsDS.Strings
 {
     public class PalindromeString
     {
-        public static int isPalindrome(string A)
+        public static void Run()
+        {
+            Console.WriteLine(isPalindrome("\"A man, a plan, a canal: Panama][:\"").ToString());//1
+            Console.WriteLine(isPalindrome("race a car").ToString());//0
+            Console.WriteLine(isPalindrome("1a2").ToString());//0
+            Console.WriteLine(isPalindrome("a").ToString());//1 
+        }
+        private static int isPalindrome(string A)
         {
             int isPalindromeString = 1;
 

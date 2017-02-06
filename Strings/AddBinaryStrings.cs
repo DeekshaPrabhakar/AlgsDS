@@ -8,7 +8,20 @@ namespace AlgsDS.Strings
 {
     public class AddBinaryStrings
     {
-        public static string addBinary(string A, string B)
+        public static void Run()
+        {
+            Console.WriteLine("AddBinaryStrings: " + "110, " + "11");
+            Console.WriteLine(addBinary("110", "11"));
+
+            Console.WriteLine("AddBinaryStrings: " + "100, " + "11");
+            Console.WriteLine(addBinary("100", "11"));
+
+            Console.WriteLine("AddBinaryStrings: " + "1010110111001101101000, " + "1000011011000000111100110");
+            Console.WriteLine(addBinary("1010110111001101101000", "1000011011000000111100110"));
+
+            Console.WriteLine();
+        }
+        private static string addBinary(string A, string B)
         {
             int aLength = A.Length;
             int bLength = B.Length;
@@ -41,7 +54,7 @@ namespace AlgsDS.Strings
             return new string(inputarray);
         }
 
-        public static int getBit(String s, int index)
+        private static int getBit(String s, int index)
         {
             if (index < 0 || index >= s.Length)
                 return 0;

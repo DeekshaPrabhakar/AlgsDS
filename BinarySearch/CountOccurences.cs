@@ -8,7 +8,14 @@ namespace AlgsDS.BinarySearch
 {
     public class CountOccurences
     {
-        public static int findCount(List<int> A, int B)
+        public static void Run()
+        {
+            Console.WriteLine("Binary Search: Count Occurences");
+            List<int> listOne = new List<int>(new int[] { 5, 7, 7, 8, 8, 10 });
+            Console.WriteLine(findCount(listOne, 8).ToString());
+            Console.WriteLine("");
+        }
+        private static int findCount(List<int> A, int B)
         {
             int indexStart = BinarySearch(A, A.Count, B, true);
             if (indexStart == -1)
@@ -22,7 +29,7 @@ namespace AlgsDS.BinarySearch
             }
         }
 
-        protected static int BinarySearch(List<int> A, int n, int x, bool searchFirst)
+        private static int BinarySearch(List<int> A, int n, int x, bool searchFirst)
         {
             int start = 0, end = n - 1, result = -1;
             while (start <= end)

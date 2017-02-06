@@ -8,7 +8,15 @@ namespace AlgsDS.BinarySearch
 {
     public class RangeSearch
     {
-        public static List<int> searchRange(List<int> A, int B)
+        public static void Run()
+        {
+            Console.WriteLine("Binary Search: Search for a Range");
+            List<int> listTwo = new List<int>(new int[] { 5, 7, 7, 8, 8, 10 });
+            AlgsDSHelper.DisplayList(searchRange(listTwo, 8));
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+        private static List<int> searchRange(List<int> A, int B)
         {
             int indexStart = BinarySearch(A, A.Count, B, true, 0);
             if (indexStart == -1)
@@ -21,7 +29,7 @@ namespace AlgsDS.BinarySearch
                 return new List<int>(new int[] { indexStart, indexEnd });
             }
         }
-        protected static int BinarySearch(List<int> A, int n, int x, bool searchFirst, int startIndex)
+        private static int BinarySearch(List<int> A, int n, int x, bool searchFirst, int startIndex)
         {
             int start = startIndex, end = n - 1, result = -1;
             while (start <= end)

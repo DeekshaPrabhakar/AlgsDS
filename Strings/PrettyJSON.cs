@@ -8,7 +8,27 @@ namespace AlgsDS.Strings
 {
     public class PrettyJSON
     {
-        public static List<string> prettyJSON(string A)
+        public static void Run()
+        {
+            String input = "{A:\"B\",C:{D:\"E\",F:{G:\"H\",I:\"J\"}}}";
+            Console.WriteLine("PrettyJSON for " + input);
+            AlgsDSHelper.DisplayJSON(prettyJSON(input));
+
+            input = "[\"foo\", {\"bar\":[\"baz\",null,1.0,2]}]";
+            Console.WriteLine("PrettyJSON for " + input);
+            AlgsDSHelper.DisplayJSON(prettyJSON(input));
+
+            input = "{\"id\":100,\"firstName\":\"Jack\",\"lastName\":\"Jones\",\"age\":12}";
+            Console.WriteLine("PrettyJSON for " + input);
+            AlgsDSHelper.DisplayJSON(prettyJSON(input));
+
+            input = "{\"attributes\":[{\"nm\":\"ACCOUNT\",\"lv\":[{\"v\":{\"Id\":null,\"State\":null},\"vt\":\"java.util.Map\",\"cn\":1}],\"vt\":\"java.util.Map\",\"status\":\"SUCCESS\",\"lmd\":13585},{\"nm\":\"PROFILE\",\"lv\":[{\"v\":{\"Party\":null,\"Ads\":null},\"vt\":\"java.util.Map\",\"cn\":2}],\"vt\":\"java.util.Map\",\"status\":\"SUCCESS\",\"lmd\":41962}]}";
+            Console.WriteLine("PrettyJSON for " + input);
+            AlgsDSHelper.DisplayJSON(prettyJSON(input));
+
+            Console.WriteLine();
+        }
+        private static List<string> prettyJSON(string A)
         {
             List<string> json = new List<string>();
 

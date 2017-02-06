@@ -9,7 +9,13 @@ namespace AlgsDS.Hashing
 {
     public class Fraction
     {
-        public static string fractionToDecimal(int A, int B)
+        public static void Run()
+        {
+            Console.WriteLine("Hashing: Fraction for 7/9");
+            Console.WriteLine(fractionToDecimal(7, 9));
+            Console.WriteLine("");
+        }
+        private static string fractionToDecimal(int A, int B)
         {
             StringBuilder sb = new StringBuilder();
 

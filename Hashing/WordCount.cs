@@ -10,6 +10,16 @@ namespace AlgsDS.Hashing
 {
     public class WordCount
     {
+        public static void Run()
+        {
+            Console.WriteLine("Hashing: Hash table word count for: To be or not to be, that is the question");//hashtable took 2.3287ms
+            AlgsDSHelper.DisplayHashtable(countWords("To be or not to be, that is the question"));
+            Console.WriteLine("");
+
+            Console.WriteLine("Hash table word count for: To be or not to be, that is the question"); //dictionary took 2.6442ms
+            AlgsDSHelper.DisplayDictionary(countWordsDic("To be or not to be, that is the question"));
+            Console.WriteLine("");
+        }
         public static Hashtable countWords(String sentence)
         {
             Hashtable map = new Hashtable();
@@ -31,26 +41,26 @@ namespace AlgsDS.Hashing
             return map;
         }
 
-        //public static Dictionary<string, int> countWords(String sentence)
-        //{
-        //    Dictionary<string, int> map = new Dictionary<string, int>();
-        //    Regex rgx = new Regex("[^a-zA-Z0-9]");
-        //    String[] words = sentence.Split(' ');
+        private static Dictionary<string, int> countWordsDic(String sentence)
+        {
+            Dictionary<string, int> map = new Dictionary<string, int>();
+            Regex rgx = new Regex("[^a-zA-Z0-9]");
+            String[] words = sentence.Split(' ');
 
-        //    for (int i = 0; i < words.Length; i++)
-        //    {
-        //        string temp = rgx.Replace(words[i].ToLower(), "");
-        //        if (!map.ContainsKey(temp))
-        //        {
-        //            map[temp] = 1;
-        //        }
-        //        else
-        //        {
-        //            map[temp]++;
-        //        }
-        //    }
-        //    return map;
-        //}
+            for (int i = 0; i < words.Length; i++)
+            {
+                string temp = rgx.Replace(words[i].ToLower(), "");
+                if (!map.ContainsKey(temp))
+                {
+                    map[temp] = 1;
+                }
+                else
+                {
+                    map[temp]++;
+                }
+            }
+            return map;
+        }
 
         /*
          * **************  Hash table word count ***************

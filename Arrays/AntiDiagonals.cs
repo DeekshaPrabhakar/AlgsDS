@@ -8,7 +8,24 @@ namespace AlgsDS.Arrays
 {
     public class AntiDiagonals
     {
-        public static List<List<int>> diagonal(List<List<int>> A)
+        public static void Run()
+        {
+            List<int> dsubList = new List<int>(new int[] { 1, 2, 3 });
+            List<List<int>> dList = new List<List<int>>(dsubList.Count);
+            dList.Add(dsubList);
+            dsubList = new List<int>(new int[] { 4, 5, 6 });
+            dList.Add(dsubList);
+            dsubList = new List<int>(new int[] { 7, 8, 9 });
+            dList.Add(dsubList);
+
+            Console.WriteLine("AntiDiagonals for input: ");
+            AlgsDSHelper.Display(dList);
+            Console.WriteLine();
+            AlgsDSHelper.Display(diagonal(dList));
+
+            Console.WriteLine();
+        }
+        private static List<List<int>> diagonal(List<List<int>> A)
         {
             int n = A.Count;
             List<List<int>> outputArray = new List<List<int>>(n);

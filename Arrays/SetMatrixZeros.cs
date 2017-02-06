@@ -8,7 +8,23 @@ namespace AlgsDS.Arrays
 {
     public class SetMatrixZeros
     {
-        public static List<List<int>> setMatrixZeros(List<List<int>> inputArray)
+        public static void Run()
+        {
+            Console.WriteLine("SetMatrixZeros: for");
+            List<int> msubList = new List<int>(new int[] { 1, 0, 1 });
+            List<List<int>> mList = new List<List<int>>(msubList.Count);
+            mList.Add(msubList);
+            msubList = new List<int>(new int[] { 1, 1, 1 });
+            mList.Add(msubList);
+            msubList = new List<int>(new int[] { 1, 1, 1 });
+            mList.Add(msubList);
+            AlgsDSHelper.Display(mList);
+            Console.WriteLine();
+            AlgsDSHelper.Display(setMatrixZeros(mList));
+
+            Console.WriteLine();
+        }
+        private static List<List<int>> setMatrixZeros(List<List<int>> inputArray)
         {
             if (inputArray == null || inputArray.Count == 0)
             {

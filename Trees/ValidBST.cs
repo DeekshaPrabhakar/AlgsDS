@@ -9,7 +9,36 @@ namespace AlgsDS.Trees
 {
     public class ValidBST
     {
-        public static int isValidBST(TreeNode A)
+        public static void Run()
+        {
+            Console.WriteLine("Trees: Valid Binary Search Tree");
+            TreeNode notValidBSTOne = new TreeNode(1);
+            notValidBSTOne.left = new TreeNode(2);
+            notValidBSTOne.right = new TreeNode(3);
+            Console.WriteLine(isValidBST(notValidBSTOne));
+            Console.WriteLine("");
+
+            TreeNode validBST = new TreeNode(2);
+            validBST.left = new TreeNode(1);
+            validBST.right = new TreeNode(3);
+            Console.WriteLine(isValidBST(validBST));
+            Console.WriteLine("");
+
+            TreeNode notValidBST = new TreeNode(3);//11 3 2 4 1 3 -1 -1 -1 -1 -1 -1 
+            notValidBST.left = new TreeNode(2);
+            notValidBST.left.left = new TreeNode(1);
+            notValidBST.left.left.left = new TreeNode(-1);
+            notValidBST.left.left.right = new TreeNode(-1);
+            notValidBST.left.right = new TreeNode(3);
+            notValidBST.right = new TreeNode(4);
+            notValidBST.right.left = new TreeNode(-1);
+            notValidBST.right.right = new TreeNode(-1);
+            Console.WriteLine(isValidBST(notValidBST));
+            Console.WriteLine("");
+            Console.WriteLine("");
+
+        }
+        private static int isValidBST(TreeNode A)
         {
             if (isBinarySearchTree(A))
             {
@@ -21,7 +50,7 @@ namespace AlgsDS.Trees
             }
         }
 
-        protected static bool isBinarySearchTree(TreeNode A)
+        private static bool isBinarySearchTree(TreeNode A)
         {
             if (A == null)
             {
@@ -54,7 +83,7 @@ namespace AlgsDS.Trees
             return true;            
         }
 
-        protected static void addNodes(TreeNode node, Stack<TreeNode> stack)
+        private static void addNodes(TreeNode node, Stack<TreeNode> stack)
         {
             while (node != null)
             {
@@ -63,7 +92,7 @@ namespace AlgsDS.Trees
             }
         }
 
-        protected static bool isSubTreeLesser(TreeNode root, int value)
+        private static bool isSubTreeLesser(TreeNode root, int value)
         {
             if (root == null || root.val == -1)
             {
@@ -80,7 +109,7 @@ namespace AlgsDS.Trees
             }
         }
 
-        protected static bool isSubTreeGreater(TreeNode root, int value)
+        private static bool isSubTreeGreater(TreeNode root, int value)
         {
             if (root == null || root.val == -1)
             {

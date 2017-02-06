@@ -30,7 +30,24 @@ namespace AlgsDS.Hashing
             }
         }
 
-        public static List<int> twoSum(List<int> A, int B)
+        public static void Run()
+        {
+            Console.WriteLine("Hashing: TwoSum for [4, 7, -4, 2, 2, 2, 3, -5, -3, 9, -4, 9, -7, 7, -1, 9, 9, 4, 1, -4, -2, 3, -3, -5, 4, -7, 7, 9, -4, 4, -8] with target -3");
+            List<int> listOne = new List<int>(new int[] { 4, 7, -4, 2, 2, 2, 3, -5, -3, 9, -4, 9, -7, 7, -1, 9, 9, 4, 1, -4, -2, 3, -3, -5, 4, -7, 7, 9, -4, 4, -8 });
+            AlgsDSHelper.DisplayList(twoSum(listOne, -3));
+            Console.WriteLine("");
+
+            Console.WriteLine("Hashing: TwoSum for [1, 1, 1 ] with target 2");
+            listOne = new List<int>(new int[] { 1, 1, 1 });
+            AlgsDSHelper.DisplayList(twoSum(listOne, 2));
+            Console.WriteLine("");
+
+            Console.WriteLine("Hashing: TwoSum for [2, 7, 11, 15] with target 9");
+            listOne = new List<int>(new int[] { 2, 7, 11, 15 });
+            AlgsDSHelper.DisplayList(twoSum(listOne, 9));
+            Console.WriteLine("");
+        }
+        private static List<int> twoSum(List<int> A, int B)
         {
             Hashtable hashMap = new Hashtable();
             List<int> resultList = new List<int>();

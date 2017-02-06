@@ -7,8 +7,15 @@ using System.Threading.Tasks;
 namespace AlgsDS.BinarySearch
 {
     public class SquareRoot
-    { 
-        public static int IntergerSquareroot(int A)
+    {
+        public static void Run()
+        {
+            Console.WriteLine("Square Root of Integer");
+            Console.WriteLine(IntergerSquareroot(11).ToString());
+            Console.WriteLine("");
+            Console.WriteLine("");
+        }
+        private static int IntergerSquareroot(int A)
         {
             long left = 0, right = A;//for 25
             //save interval for 25 in left and right initially 0 - 25; take mid 12 if 12*12 = 144

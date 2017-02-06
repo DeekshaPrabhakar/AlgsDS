@@ -8,7 +8,20 @@ namespace AlgsDS.LinkedLists
 {
     public class AddTwoNumbersAsLists
     {
-        public static ListNode addTwoNumbers(ListNode A, ListNode B)
+        public static void Run()
+        {
+            Console.WriteLine("Linked Lists: Add Two Numbers as Lists: (2 -> 4 -> 3) + (5 -> 6 -> 4)");
+            ListNode C = new ListNode(2);
+            C.next = new ListNode(4);
+            C.next.next = new ListNode(3);
+
+            ListNode D = new ListNode(5);
+            D.next = new ListNode(6);
+            D.next.next = new ListNode(4);
+
+            AlgsDSHelper.DisplayLinkedList(addTwoNumbers(C, D));
+        }
+        private static ListNode addTwoNumbers(ListNode A, ListNode B)
         {
             ListNode dummyHead = new ListNode(0);
             ListNode placeIterator = dummyHead;

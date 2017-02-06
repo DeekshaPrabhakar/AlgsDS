@@ -8,7 +8,13 @@ namespace AlgsDS.Strings
 {
     public class LengthOfLastWord
     {
-        public static int lengthOfLastWord(String a)
+        public static void Run()
+        {
+            Console.WriteLine("LengthOfLastWord: Hello world  ");
+            Console.WriteLine(lengthOfLastWord("Hello world  "));
+            Console.WriteLine();
+        }
+        private static int lengthOfLastWord(String a)
         {
             int count = 0;
             bool lastWordStarted = false;
