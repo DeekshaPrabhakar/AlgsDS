@@ -35,10 +35,9 @@ namespace AlgsDS.Trees
             Console.WriteLine("");
         }
         private static List<int> inorderTraversal(TreeNode A)
-        {
+        {//left -> root-> right
             List<int> list = new List<int>();
-            Stack<TreeNode> stack = new Stack<TreeNode>(); //only left nodes
-            Queue<TreeNode> s = new Queue<TreeNode>();
+            Stack<TreeNode> stack = new Stack<TreeNode>(); //only left nodes            
             TreeNode currentNode = A;
 
             while(stack.Count > 0 || currentNode != null)

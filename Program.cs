@@ -162,12 +162,16 @@ namespace AlgsDS
 
             #region WeekThreeBeforeSession
 
-            ValidBST.Run();
-            Inorder.Run();
-            SymmetricBT.Run();
-            CountOccurences.Run();
-            RangeSearch.Run();
-            SquareRoot.Run();
+            //ValidBST.Run();
+            //Inorder.Run();
+            //SymmetricBT.Run();
+            //CountOccurences.Run();
+            //RangeSearch.Run();
+            //SquareRoot.Run();
+
+            //Preorder.Run();
+            //PostOrder.Run();
+            RotatedArray.Run();
 
             #endregion
 

@@ -49,6 +49,7 @@
     <Compile Include="Arrays\SetMatrixZeros.cs" />
     <Compile Include="BinarySearch\CountOccurences.cs" />
     <Compile Include="BinarySearch\RangeSearch.cs" />
+    <Compile Include="BinarySearch\RotatedArray.cs" />
     <Compile Include="BinarySearch\SquareRoot.cs" />
     <Compile Include="Hashing\FindAnagrams.cs" />
     <Compile Include="Hashing\Fraction.cs" />
@@ -83,6 +84,8 @@
     <Compile Include="Strings\PrettyJSON.cs" />
     <Compile Include="Strings\ReverseTheString.cs" />
     <Compile Include="Trees\Inorder.cs" />
+    <Compile Include="Trees\PostOrder.cs" />
+    <Compile Include="Trees\Preorder.cs" />
     <Compile Include="Trees\SymmetricBT.cs" />
     <Compile Include="Trees\ValidBST.cs" />
     <Compile Include="WeekTwo.cs" />
