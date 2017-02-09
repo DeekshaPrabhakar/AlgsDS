@@ -103,6 +103,16 @@ namespace AlgsDS
             Console.WriteLine();
         }
 
+        public static void DisplayListOfStrings(List<string> list)
+        {
+            foreach (var value in list)
+            {
+                Console.Write(value);
+                Console.Write(' ');
+            }
+            Console.WriteLine();
+        }
+
         public static void DisplayDictionary(Dictionary<string, int> dict)
         {
             foreach (KeyValuePair<string, int> pair in dict)
@@ -121,7 +131,7 @@ namespace AlgsDS
             Console.WriteLine();
         }
 
-        protected static string getListStrings(List<String> list)
+        public static string getListStrings(List<String> list)
         {
             StringBuilder sb = new StringBuilder();
             sb.Append("[");
