@@ -139,11 +139,11 @@ namespace AlgsDS
             //ReverseTheString.Run();
             //PrettyJSON.Run();
             //PalindromeString.Run();
-          
+
             #endregion
 
             #region WeekTwo
-            
+
             //Fraction.Run();
             //WordCount.Run();
             //AddTwoNumbersAsLists.Run();
@@ -197,7 +197,7 @@ namespace AlgsDS
             //OneBits.Run();
             //SingleNumber.Run();
             //LetterPhone.Run();
-            Subset.Run();
+            //Subset.Run();
             //AlgsDSHelper.DisplayList(Inorder.inorderTraversal(bstFromPreOrderTwo()));
             //Console.WriteLine(isValidBST(bstFromPreOrderTwo()));
             //TreeNode root = bstFromPreOrderTwo();
@@ -215,17 +215,29 @@ namespace AlgsDS
             //createBST(new int[] { 2,1,3 });
             //valisBST();
             //sExpression();
+
+            //DecimalToBinary.Run();
+            //TowersOfHanoi.Run();
+
+            //AlgsDSHelper.Display(permute(new int[] { 1, 2, 3}));
+
+            //Permutation.Run();
+            ReverseBits.Run();
+
             Console.ReadLine();
         }
 
-       
+      
+
+
+
         static void sExpression()
         {
             string input = Console.ReadLine();
             string[] pairs = input.Split(' ');
             ParentChildNode root = null;
             List<string> errorCodes = new List<string>();
-            foreach(string pair in pairs)
+            foreach (string pair in pairs)
             {
                 createBT(pair, root, errorCodes);
             }
@@ -286,12 +298,12 @@ namespace AlgsDS
         }
         static void findParent(string valToFind, ParentChildNode current)
         {
-            if(current.data == valToFind)
+            if (current.data == valToFind)
             {
                 return;
             }
 
-            if(current.childLeft != null)
+            if (current.childLeft != null)
             {
                 findParent(valToFind, current.childLeft);
             }
@@ -299,7 +311,7 @@ namespace AlgsDS
             {
                 findParent(valToFind, current.childRight);
             }
-            
+
         }
 
 
@@ -402,9 +414,9 @@ namespace AlgsDS
         public static void insert(TreeNode root, int key, ref int counter)
         {
             counter++;
-            if(key < root.val)
+            if (key < root.val)
             {
-                if(root.left == null)
+                if (root.left == null)
                 {
                     root.left = new TreeNode(key);
                 }
@@ -446,38 +458,38 @@ namespace AlgsDS
                 return rightHeight + 1;
             }
         }
-               
+
         protected static TreeNode bstFromPreOrder()
-       {
-           List<int> arr = new List<int>(new int[] { 10, 5, 1, 7, 40, 50, 60 });
-           TreeNode root = new TreeNode(arr[0]);
-           Stack<TreeNode> stack = new Stack<TreeNode>();
-           stack.Push(root);
+        {
+            List<int> arr = new List<int>(new int[] { 10, 5, 1, 7, 40, 50, 60 });
+            TreeNode root = new TreeNode(arr[0]);
+            Stack<TreeNode> stack = new Stack<TreeNode>();
+            stack.Push(root);
 
-           for(int i=1; i< arr.Count; i++)
-           {
-               TreeNode currentNode = null;
+            for (int i = 1; i < arr.Count; i++)
+            {
+                TreeNode currentNode = null;
 
-               while(stack.Count != 0 && arr[i] > stack.Peek().val)
-               {
-                   currentNode = stack.Pop();
-               }
+                while (stack.Count != 0 && arr[i] > stack.Peek().val)
+                {
+                    currentNode = stack.Pop();
+                }
 
-               if (currentNode != null)
-               {
-                   currentNode.right = new TreeNode(arr[i]);
-                   stack.Push(currentNode.right);
-               }
-               else
-               {
-                   currentNode = stack.Peek();
-                   currentNode.left = new TreeNode(arr[i]);
-                   stack.Push(currentNode.left);
-               }
-           }
-           return root;
+                if (currentNode != null)
+                {
+                    currentNode.right = new TreeNode(arr[i]);
+                    stack.Push(currentNode.right);
+                }
+                else
+                {
+                    currentNode = stack.Peek();
+                    currentNode.left = new TreeNode(arr[i]);
+                    stack.Push(currentNode.left);
+                }
+            }
+            return root;
 
-       }
+        }
 
         private static bool isValidBST(TreeNode A)
         {
@@ -539,25 +551,25 @@ namespace AlgsDS
             AlgsDSHelper.DisplayList(Inorder.inorderTraversal(buildBST(list)));
         }
 
-      protected static TreeNode buildBST(List<int> arr)
+        protected static TreeNode buildBST(List<int> arr)
         {
-            return buildBSTNode(arr, 0, arr.Count-1);
+            return buildBSTNode(arr, 0, arr.Count - 1);
         }
 
-      private static TreeNode buildBSTNode(List<int> arr, int start, int end)
-      {
-          if (start > end)
-          {
-              return null;
-          }
-          int mid = (start + end) / 2;
-          TreeNode root = new TreeNode(arr[mid]);
+        private static TreeNode buildBSTNode(List<int> arr, int start, int end)
+        {
+            if (start > end)
+            {
+                return null;
+            }
+            int mid = (start + end) / 2;
+            TreeNode root = new TreeNode(arr[mid]);
 
-          root.left = buildBSTNode(arr, start, mid - 1);
-          root.right = buildBSTNode(arr, mid + 1, end);
+            root.left = buildBSTNode(arr, start, mid - 1);
+            root.right = buildBSTNode(arr, mid + 1, end);
 
-          return root;
-      }
+            return root;
+        }
 
     }
 }

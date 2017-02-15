@@ -10,16 +10,18 @@ namespace AlgsDS.BitManipulation
     {
         public static void Run()
         {
-            Console.WriteLine(singleNum(new int[] { 1, 2, 2,3 ,1 }));
+            Console.WriteLine(singleNum(new int[] { 1, 2, 2, 3, 3, 4, 4 }));            
         }
 
+       
         public static int singleNum(int[] A)
         {
             int x = 0;
             foreach (int digit in A)
             {
-                x = x ^ digit;
+                x = x ^ digit ;
             }
+          
             return x;
         }
     }
