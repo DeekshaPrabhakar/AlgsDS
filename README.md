@@ -57,8 +57,11 @@ Gaining a deeper understanding of algorithms and data structures
 ###<a href="https://github.com/DeekshaPrabhakar/AlgsDS/tree/master/BitManipulation">Bit Manipulation</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BitManipulation/OneBits.cs">Number of 1 Bits</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BitManipulation/SingleNumber.cs">Single Number</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BitManipulation/DivideIntegers.cs">Divide Integers</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/BitManipulation/ReverseBits.cs">Reverse Bits</a>
 
 ###<a href="https://github.com/DeekshaPrabhakar/AlgsDS/tree/master/Recursion">Recursion</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Recursion/Factorial.cs">Factorial</a>
   - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Recursion/LetterPhone.cs">Letter Phone </a>
-  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Recursion/Subset.cs">Subset</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Recursion/Permutations.cs">Permutations</a>
+  - <a href="https://github.com/DeekshaPrabhakar/AlgsDS/blob/master/Recursion/TowersOfHanoi.cs">Towers Of Hanoi</a>
