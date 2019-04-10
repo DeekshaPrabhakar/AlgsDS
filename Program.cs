@@ -2,14 +2,17 @@
 using AlgsDS.BinarySearch;
 using AlgsDS.BitManipulation;
 using AlgsDS.Hashing;
+using AlgsDS.Heaps;
 using AlgsDS.LinkedLists;
 using AlgsDS.Recursion;
+using AlgsDS.Stacks;
 using AlgsDS.Strings;
 using AlgsDS.Trees;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -169,7 +172,7 @@ namespace AlgsDS
 
             #endregion
 
-            #region WeekThreeBeforeSession
+            #region WeekThree
 
             //ValidBST.Run();
             //Inorder.Run();
@@ -222,13 +225,257 @@ namespace AlgsDS
             //AlgsDSHelper.Display(permute(new int[] { 1, 2, 3}));
 
             //Permutation.Run();
-            ReverseBits.Run();
+            //ReverseBits.Run();
+            //Fibonacci.Run();
+            //MaximizingXOR.Run();
+            //CounterGame.Run();
+            //pascalTriangle(7);
+            //int _tests_size = 0;
+            //_tests_size = Convert.ToInt32(Console.ReadLine());
+            //string[] _tests = new string[_tests_size];
+            //string _tests_item;
+            //for (int _tests_i = 0; _tests_i < _tests_size; _tests_i++)
+            //{
+            //    _tests_item = Console.ReadLine();
+            //    _tests[_tests_i] = _tests_item;
+            //}
 
+            //counterGame(_tests);
+            //Console.WriteLine(isPowerofTwo(4));
+            //Console.WriteLine(largestPowerLessThan(21));
+            //string fileName = System.Environment.GetEnvironmentVariable("OUTPUT_PATH");
+            //TextWriter tw = new StreamWriter(@fileName, true);
+            //string res;
+            //int _a;
+            //_a = Convert.ToInt32(Console.ReadLine());
+
+            //int _b;
+            //_b = Convert.ToInt32(Console.ReadLine());
+
+            //int _c;
+            //_c = Convert.ToInt32(Console.ReadLine());
+
+            //int _d;
+            //_d = Convert.ToInt32(Console.ReadLine());
+
+            //Console.WriteLine(isPossible(_a, _b, _c, _d));
+
+            //long n = Convert.ToInt64(Console.ReadLine());
+            //int totalX = 0;
+            //long sum = 0;
+            //long xorVal = 0;
+            //for (int i = 0; i <= n; i++)
+            //{
+            //    sum = n + i;
+            //    xorVal = n ^ i;
+            //    if (sum == xorVal)
+            //    {
+            //        totalX++;
+            //    }
+            //}
+            //Console.WriteLine(totalX);
+            //QHeap.Run();
+            //MaximumElement.Run();
+            List<int> l = new List<int>(new int[] { 2,4 });
+            //Console.WriteLine(getUmbrellas(4, l));//1
+
+            //l = new List<int>(new int[] { 2 });
+            //Console.WriteLine(getUmbrellas(1,l));//-1
+
+            //l = new List<int>(new int[] { 3, 5 });
+            //Console.WriteLine(getUmbrellas(5, l));//1
+            //Console.WriteLine(getUmbrellas(6, l));//2
+            //Console.WriteLine(getUmbrellas(7, l));//-1
+            //l = new List<int>(new int[] {3, 2 });
+            //Console.WriteLine(getUmbrellas(16, l));//4
+
+            l = new List<int>(new int[] { 7, 3, 1 });
+            Console.WriteLine(getUmbrellas(11, l));//3
+            //Console.WriteLine(getUmbrellas(14, l));//2
             Console.ReadLine();
         }
 
-      
+        static int getUmbrellas(int n, List<int> p)
+        {
+            List<int> chosen = new List<int>();
+            Dictionary<string, int> memos = new Dictionary<string, int>();
+            p.Sort();
+            int min = int.MaxValue;
+            getUmbrellasHelper(n, p, chosen, ref min, memos);
+            if (min == int.MaxValue)
+            {
+                return -1;
+            }
+            return min;
+        }
 
+        static int getUmbrellasHelper(int sum, List<int> sizes, List<int> chosen, ref int minimum, Dictionary<string, int> memos)
+        {
+            //base case
+            if (sum == 0)
+            {
+                AlgsDSHelper.DisplayList(chosen);
+                return chosen.Count;
+            }
+            else
+            {
+
+                for (int i = sizes.Count - 1; i >= 0; i--)
+                {
+                    //choose
+                    int chosenEl = sizes[i];
+                    chosen.Add(chosenEl);
+
+                    //explore
+                    if (sum - chosenEl >= 0 && chosen.Count < minimum) //optimization
+                    {
+                        string key = chosenKey(chosen);
+                        if (memos.ContainsKey(key))
+                        {
+                            int min = memos[key];
+                            minimum = Math.Min(minimum, min);
+                        }
+                        else
+                        {
+                            int min = getUmbrellasHelper(sum - chosenEl, sizes, chosen, ref minimum, memos);
+
+
+                            memos.Add(key, min);
+
+                            minimum = Math.Min(minimum, min);
+                        }
+                    }
+                    //unchoose
+                    chosen.Remove(chosenEl);
+                }
+                return minimum;
+            }
+        }
+
+
+        static string chosenKey(List<int> list)
+        {
+            list.Sort();
+            return string.Join("", list);
+        }
+
+
+        static string isPossible(int a, int b, int c, int d)
+        {
+            while(a <=c && b <= d)
+            {
+                if (a == c && b == d)
+                {
+                    return "Yes";
+                }
+                int tempa = a;
+                int tempb = b;
+                if(a<c )
+                {
+                    a = a + b;
+                }
+                if (b < d )
+                {
+                    b = a + b;
+                }  
+            }
+            return "No";
+        }
+
+       
+        static void counterGame(string[] tests)
+        {
+            foreach (string test in tests)
+            {
+                ulong N = 0;
+
+                if (ulong.TryParse(test, out N) == false)
+                {
+                    N = 0;
+                }
+                if (N > 0)
+                {
+                    bool isLouiseplaying = true;
+                    ulong counter = N;
+
+                    while (counter != 1)
+                    {
+                        if (isPowerofTwo(counter))
+                        {
+                            counter = counter / 2;
+                        }
+                        else
+                        {
+                            counter = counter - largestPowerLessThan(counter);
+                        }
+                        isLouiseplaying = !isLouiseplaying;
+                    }
+
+                    if (isLouiseplaying)
+                    {
+                        Console.WriteLine("Richard");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Louise");
+                    }
+                }
+            }
+        }
+        private static bool isPowerofTwo(ulong N)
+        {
+            return ((N & (N - 1)) == 0);
+        }
+
+        private static ulong largestPowerLessThan(ulong N)
+        {
+            N = N | (N >> 1);
+            N = N | (N >> 2);
+            N = N | (N >> 4);
+            N = N | (N >> 8);
+            return (N + 1) >> 1;
+        }
+
+
+        static void pascalTriangle(int k)
+        {            
+            if(k<2 | k> 25)
+            {
+                return;
+            }
+
+            for (int n = 0; n < k; n++)
+            {
+                printRow(n);
+            }            
+        }
+
+        static void printRow(int row)
+        {
+            StringBuilder sb = new StringBuilder();
+            for(int i=0; i<=row; i++)
+            {
+                sb.Append(roCol(row, i) + " ");
+            }
+            if(sb.ToString().Length > 2)
+            {
+                sb.Remove(sb.Length - 1, 1);
+            }
+            Console.WriteLine(sb.ToString());
+        }
+
+        static int roCol(int nRow, int rColumn)
+        {
+            int colVal = FindFactorial(nRow) /(FindFactorial(rColumn)*  FindFactorial(nRow-rColumn));
+            return colVal;
+        }
+
+        private static int FindFactorial(int n)
+        {
+            if (n == 0)
+                return 1;
+            return n * FindFactorial(n - 1);
+        }
 
 
         static void sExpression()

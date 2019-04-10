@@ -51,8 +51,10 @@
     <Compile Include="BinarySearch\RangeSearch.cs" />
     <Compile Include="BinarySearch\RotatedArray.cs" />
     <Compile Include="BinarySearch\SquareRoot.cs" />
+    <Compile Include="BitManipulation\CounterGame.cs" />
     <Compile Include="BitManipulation\DecimalToBinary.cs" />
     <Compile Include="BitManipulation\DivideIntegers.cs" />
+    <Compile Include="BitManipulation\MaximizingXOR.cs" />
     <Compile Include="BitManipulation\OneBits.cs" />
     <Compile Include="BitManipulation\ReverseBits.cs" />
     <Compile Include="BitManipulation\SingleNumber.cs" />
@@ -67,6 +69,7 @@
     </Compile>
     <Compile Include="Hashing\WindowString.cs" />
     <Compile Include="Hashing\WordCount.cs" />
+    <Compile Include="Heaps\QHeap.cs" />
     <Compile Include="LinkedLists\AddTwoNumbersAsLists.cs" />
     <Compile Include="LinkedLists\DetectCycle.cs" />
     <Compile Include="LinkedLists\GetNode.cs" />
@@ -84,15 +87,20 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Recursion\Factorial.cs" />
+    <Compile Include="Recursion\Fibonacci.cs" />
     <Compile Include="Recursion\LetterPhone.cs" />
     <Compile Include="Recursion\Permutations.cs" />
+    <Compile Include="Recursion\Staircase.cs" />
     <Compile Include="Recursion\Subset.cs" />
     <Compile Include="Recursion\TowersOfHanoi.cs" />
+    <Compile Include="Stacks\MaximumElement.cs" />
     <Compile Include="Strings\AddBinaryStrings.cs" />
     <Compile Include="Strings\LengthOfLastWord.cs" />
     <Compile Include="Strings\PalindromeString.cs" />
     <Compile Include="Strings\PrettyJSON.cs" />
     <Compile Include="Strings\ReverseTheString.cs" />
+    <Compile Include="Strings\StringIntegerConversion.cs" />
+    <Compile Include="Tests\Time.cs" />
     <Compile Include="Trees\BSTInsertion.cs" />
     <Compile Include="Trees\HeightOfBinaryTree.cs" />
     <Compile Include="Trees\Inorder.cs" />
@@ -102,12 +110,15 @@
     <Compile Include="Trees\SymmetricBT.cs" />
     <Compile Include="Trees\TreeTopView.cs" />
     <Compile Include="Trees\ValidBST.cs" />
+    <Compile Include="Warmup\minmaxSum.cs" />
     <Compile Include="WeekTwo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="Sorting\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

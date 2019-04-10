@@ -103,6 +103,14 @@ namespace AlgsDS
             Console.WriteLine();
         }
 
+        public static void DisplayListElementsOnNewLine(List<Int64> list)
+        {
+            foreach (var value in list)
+            {
+                Console.WriteLine(value);
+            }
+        }
+
         public static void DisplayListOfStrings(List<string> list)
         {
             foreach (var value in list)
